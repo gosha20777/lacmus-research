@@ -272,8 +272,11 @@ class DatasetGridCropper:
         def save_one_fragment(index: int, frag: GridFragment) -> None:
             with tempfile.NamedTemporaryFile(suffix='.jpg') as t:
                 base_dir = os.path.join(self.target_dataset.base_dir(), 'Pedestrian')
-                if(not os.path.isdir(base_dir)):
-                    os.mkdir(base_dir)
+                try:
+                    if(not os.path.isdir(base_dir)):
+                        os.mkdir(base_dir)
+                except:
+                    pass
                 image_id = str(index)
                 file_name = os.path.join(base_dir, f'{image_id}.png')
                 frag.save_file(file_name)
@@ -289,8 +292,11 @@ class DatasetGridCropper:
         def save_one_fragment(index: int, frag: GridFragment) -> None:
             with tempfile.NamedTemporaryFile(suffix='.jpg') as t:
                 base_dir = os.path.join(self.target_dataset.base_dir(), 'Background')
-                if(not os.path.isdir(base_dir)):
-                    os.mkdir(base_dir)
+                try:
+                    if(not os.path.isdir(base_dir)):
+                        os.mkdir(base_dir)
+                except:
+                    pass
                 image_id = str(index)
                 file_name = os.path.join(base_dir, f'{image_id}.png')
                 frag.save_file(file_name)
