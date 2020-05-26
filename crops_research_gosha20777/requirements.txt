@@ -1,0 +1,11 @@
+jupyter
+opencv-python
+tensorflow-gpu
+keras==2.3.1
+click
+tqdm
+joblib
+matplotlib
+nympy
+sklearn
+Pillow
